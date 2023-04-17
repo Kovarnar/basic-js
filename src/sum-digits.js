@@ -24,10 +24,6 @@ function getSumOfDigits(n) {
   return getSumOfDigits(sum);
 }
 
-console.log(getSumOfDigits(100))  // (1 + 0 + 0 = 1)
-console.log(getSumOfDigits(91))   // (9 + 1 = 10, 1 + 0 = 1)
-console.log(getSumOfDigits(5891))
-
 module.exports = {
   getSumOfDigits
 };

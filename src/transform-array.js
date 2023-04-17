@@ -21,14 +21,6 @@ function transform(arr) {
   let newArr = arr.slice();
 
   for (let i = 0; i < newArr.length; i++) {
-    // if (newArr[i] === '--discard-next') {
-    //   if (i !== newArr.length-1) {
-    //     newArr.splice(i, 2);
-    //   } else {
-    //     newArr.splice(i, 1);
-    //   }
-    // }
-
     if (newArr[i] === '--discard-next') {
       if (i !== newArr.length-1) {
         if (newArr[i+2] === '--double-prev' || newArr[i+2] === '--discard-prev') {
@@ -40,7 +32,7 @@ function transform(arr) {
         newArr.splice(i, 1);
       }
     }
-    
+
     if (newArr[i] === '--double-prev') {
       if (i) {
         newArr.splice(i, 1, newArr[i - 1]);
@@ -66,12 +58,6 @@ function transform(arr) {
 
   return newArr
 }
-
-console.log(transform([1, 2, 3, '--double-next', 4, 5]))
-console.log(transform([1, 2, 3, '--double-prev', 4, 5]))
-console.log(transform([1, 2, 3, '--discard-next', 4, 5]))
-console.log(transform([1, 2, 3, '--discard-prev', 4, 5]))
-
 
 module.exports = {
   transform
